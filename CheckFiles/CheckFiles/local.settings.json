@@ -1,0 +1,17 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "QueueApiKey": "QueueApiKey-Secret",
+    "EmailServiceUrl": "https://bold-flower-809.getsandbox.com/api/email",
+    "EmailJwtToken": "EmailJwtToken-Secret",
+    "MonitoringUrl": "https://bold-flower-809.getsandbox.com/monitor",
+    "MonitoringApiKey": "MonitoringApiKey-Secret",
+    "UnhandledEmailTemplateId": "73212136123123",
+    "processed-files-topic-ListenKey": "Endpoint=sb://afservicebus.servicebus.windows.net/;SharedAccessKeyName=processed-files-topic-ListenKey;SharedAccessKey=saMsxeP6tWB+hcvXdlDuJDXTUodUhXW/Rs/ntPkJS9k=;",
+    "AzureFunctionsJobHost__logging__logLevel__default": "debug",
+    //"AzureFunctionsJobHost__logging__logLevel__default": "information",
+    "KeyVaultUri": "https://og-shared-kv.vault.azure.net"
+  }
+} 
