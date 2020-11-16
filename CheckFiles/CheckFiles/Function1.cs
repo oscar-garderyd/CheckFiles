@@ -35,26 +35,26 @@ namespace CheckFiles
             string unhandledEmailTemplateId = config["UnhandledEmailTemplateId"]; //Secret
             string sbConnectionString = config["processed-files-topic-ListenKey"]; //Secret
 
-            string emailJwtTokenSecretValue;
-            string monitoringApiKeySecretValue;
-            string unhandledEmailTemplateIdSecretValue;
-            string sbConnectionStringSecretValue;
-            try
-            {
-                var client = new SecretClient(new Uri(keyVaultUri), new DefaultAzureCredential());
-                KeyVaultSecret emailJwtTokenSecret = await client.GetSecretAsync(emailJwtToken);
-                emailJwtTokenSecretValue = emailJwtTokenSecret.Value;
-                KeyVaultSecret monitoringApiKeySecret = await client.GetSecretAsync(monitoringApiKey);
-                monitoringApiKeySecretValue = monitoringApiKeySecret.Value;
-                KeyVaultSecret unhandledEmailTemplateIdSecret = await client.GetSecretAsync(unhandledEmailTemplateId);
-                unhandledEmailTemplateIdSecretValue = unhandledEmailTemplateIdSecret.Value;
-                KeyVaultSecret sbConnectionStringSecret = await client.GetSecretAsync(sbConnectionString);
-                sbConnectionStringSecretValue = sbConnectionStringSecret.Value;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Failed to retreive secrets from KeyVault: {e.Message}");
-            }
+            string emailJwtTokenSecretValue = emailJwtToken;
+            string monitoringApiKeySecretValue = monitoringApiKey;
+            string unhandledEmailTemplateIdSecretValue = unhandledEmailTemplateId;
+            string sbConnectionStringSecretValue = sbConnectionString;
+            //try
+            //{
+            //    var client = new SecretClient(new Uri(keyVaultUri), new DefaultAzureCredential());
+            //    KeyVaultSecret emailJwtTokenSecret = await client.GetSecretAsync(emailJwtToken);
+            //    emailJwtTokenSecretValue = emailJwtTokenSecret.Value;
+            //    KeyVaultSecret monitoringApiKeySecret = await client.GetSecretAsync(monitoringApiKey);
+            //    monitoringApiKeySecretValue = monitoringApiKeySecret.Value;
+            //    KeyVaultSecret unhandledEmailTemplateIdSecret = await client.GetSecretAsync(unhandledEmailTemplateId);
+            //    unhandledEmailTemplateIdSecretValue = unhandledEmailTemplateIdSecret.Value;
+            //    KeyVaultSecret sbConnectionStringSecret = await client.GetSecretAsync(sbConnectionString);
+            //    sbConnectionStringSecretValue = sbConnectionStringSecret.Value;
+            //}
+            //catch (Exception e)
+            //{
+            //    throw new Exception($"Failed to retreive secrets from KeyVault: {e.Message}");
+            //}
 
             int[] databaseTenantIds = { 1, 2, 3, 4, 5, 6, 7 }; // These values have matching Ids in the database
             List<File> unhandledFiles = new List<File>();
